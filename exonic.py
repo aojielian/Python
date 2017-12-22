@@ -4,10 +4,10 @@ from os import listdir
 
 
 def get_files(func_name, exonic_func_ref_gene, input_path, output_path, pli_input_path):
-    my_list = listdir(input_path)  #
-    for file_name in my_list:  #
+    my_list = listdir(input_path)  #define my_list
+    for file_name in my_list:  # for loop
         if isfile(join(input_path, file_name)):
-            if file_name.lower().endswith('.csv'):  #
+            if file_name.lower().endswith('.csv'):  #check if file is csv
                 output_file_name = file_name + '_' + 'output' + '.csv'
                 get_exonic_and_stopgain(func_name, exonic_func_ref_gene, join(input_path, file_name), join(output_path, output_file_name), pli_input_path)
 
